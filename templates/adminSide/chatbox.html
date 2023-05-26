@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+ <link rel="stylesheet" href="{%static 'css/bot.css'%}">
+  <title>Document</title>
+</head>
+
+<body>
+  {% comment %} <form action="/chatbox/" method="post">
+    {% csrf_token %}
+    <label for="ask">Ask your question</label>
+    <input type="text" name="ans" id="ans">
+    <input type="submit" value="submit">
+  
+  </form> {% endcomment %}
+ 
+  <!--=============== FONT AWESOME ===============-->
+  <div class="container">
+    <form action="/chatbox/" method="post">
+    {% csrf_token %}
+  <div class="header">
+    <img src="https://cdn-icons-png.flaticon.com/512/2233/2233922.png" alt="" class="avatar">
+    <h3>Dad</h3>
+    <i class="fa-solid fa-phone"></i>
+    <i class="fa-solid fa-video"></i>
+    <i class="fa-solid fa-ellipsis-vertical"></i>
+  </div>
+  <div id="chat" class="chat">
+    <p>Today</p>
+  </div>
+  <button type="submit" class="btn"><input type="text" name="ans" placeholder="Can you tell me a joke?"><i class="fa-solid fa-paper-plane"></i></button>
+</form>
+</div>
+{% if response %}
+      <h3>
+      {{response}}
+      </h3>
+      {% endif %}
+  
+</body>
+
+</html>

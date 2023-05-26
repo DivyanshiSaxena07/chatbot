@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="{%static 'css/sign.css'%}">
+</head>
+
+<body>
+  <div class="box">
+    <form action="/signin/" method="post">
+      {% csrf_token %}
+      <div class="form">
+        <h2>Login</h2>
+        <div class="inputBox">
+          <input type="text" required="required" name="lname">
+          <span>Username</span>
+          <i></i>
+        </div>
+        <div class="inputBox">
+          <input type="password" required="required" name="lpass">
+          <span>Password</span>
+          <i></i>
+        </div>
+        <div class="links">
+          <a href="https://akhs1.com/">Forgot password?</a>
+          <a href="/signup/">SignUp</a>
+        </div>
+        <input type="submit" value="Login">
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
